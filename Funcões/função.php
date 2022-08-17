@@ -12,6 +12,8 @@ function soma ($v1, $v2){
 
 echo "A soma é: " . soma(10, 5);
 
+echo "A soma é: " . soma(20, 5);
+
 if($operador == "+"){
     echo soma(50, 10) ;
 }
