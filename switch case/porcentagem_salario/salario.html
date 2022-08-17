@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="salario.php" method=GET>
+
+        Digite seu nome:<input type="text" name="nome"/>
+        <br>
+        <br>
+        Digite seu salário:<input type="number" name="salario"/>
+        <br>
+        <br>
+        Selecione seu aumento:<select name="porcentagem">
+            <option value="0">0%</option>
+            <option value="10">10%</option>
+            <option value="25">25%</option>
+            <option value="33">33%</option>
+            <option value="41">41%</option> 
+            <option value="50">50%</option>
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="verificar">
+    </form>
+
+</body>
+</html>
