@@ -7,5 +7,6 @@ $banco="escola";
 
 $conexao= mysqli_connect($servidor, $usuario,$senha,$banco) or die;
 
-
+$consulta= "SELECT * FROM alunos";
+$consulta_aluno= mysqli_query($conexao, $consulta);
 ?>

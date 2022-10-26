@@ -12,6 +12,6 @@ include 'conexao.php';
 
  mysqli_query($conexao, $query);
 
- header('location: projeto.html');
+ header('location: ver_aluno.php');
 
 ?>
