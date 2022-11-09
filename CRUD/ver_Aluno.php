@@ -12,12 +12,14 @@
             <tr>
                 <th>Nome do aluno</th>
                 <th>Idade</th>
-                <th>Editar</th>
                 <th>Excluir</th>
+                <th>Editar</th>
             </tr>
         
     </thead>
+
     <tbody>
+
     <?php
 
     include_once 'conexao.php';
@@ -25,11 +27,16 @@
     //Laço que percorrer o banco de transformar os dados em vetor
     while($linha = mysqli_fetch_array($consulta_aluno)){
         echo '<tr><td border: 1px solid #ccc;>' . $linha['NOME'] . '</td>';
-        echo '<td>' . $linha['IDADE'] . '</td></tr>';
-    }
+        echo '<td>' . $linha['IDADE'] . '</td>';
+    ?>
 
-    
-    
+        <td><a href="deleta_aluno.php?ID = 
+        <?php echo $linha['ID']; ?>">
+        <input type="submit" value="DELETAR"/>
+    </a></td></tr>
+
+    <?php
+    }
     ?>
     </tbody>
     </table>
