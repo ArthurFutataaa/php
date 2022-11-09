@@ -30,8 +30,8 @@
         echo '<td>' . $linha['IDADE'] . '</td>';
     ?>
 
-        <td><a href="deleta_aluno.php?ID = 
-        <?php echo $linha['ID']; ?>">
+        <td><a href="deleta_aluno.php?ID=<?php echo $linha['ID']; ?>">
+        
         <input type="submit" value="DELETAR"/>
     </a></td></tr>
 
