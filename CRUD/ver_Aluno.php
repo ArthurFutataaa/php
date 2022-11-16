@@ -1,49 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <table style="border: 2px solid #ccc">
-        <thead>
-            <tr>
-                <th>Nome do aluno</th>
-                <th>Idade</th>
-                <th>Editar</th>
-                <th>Deletar</th>
-            </tr>
-        
-    </thead>
+<html>
 
-    <tbody>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <table style="border: 2px solid #ccc;">
+            <thead>
+                <th>NOME DO ALUNO</th>
+                <th>IDADE</th>
+                <th>EDITAR</th>
+                <th>DELETAR</th>
+            </thead>
+            <tbody>
+                <?php
+                    include 'conexao.php';
 
-    <?php
+                    $consulta = 'SELECT * FROM alunos';
+                    $consulta_alunos = mysqli_query($conexao, $consulta);
 
-    include_once 'conexao.php';
+                    while($linha = mysqli_fetch_array($consulta_alunos)){
+                        echo '<tr><td>' . $linha['NOME'] . '</td>';
+                        echo '<td>' . $linha['IDADE'] . '</td>';
+                ?>
 
-    //Laço que percorrer o banco de transformar os dados em vetor
-    while($linha = mysqli_fetch_array($consulta_aluno)){
-        echo '<tr><td border: 1px solid #ccc;>' . $linha['NOME'] . '</td>';
-        echo '<td>' . $linha['IDADE'] . '</td>';
-    ?>
+                <td>
+                    <a href="Aluno.php?editar=<?php echo $linha['ID']; ?>">
+                    <input type="submit" value="EDITAR">
+                    </a></td>
 
-    <td>
-        <a href="Aluno.php&editar=<?php echo $linha['ID'];?>">
-        <input type="submit" value="EDITAR">
-    </td>
+                <td><a href="deleta_aluno.php?ID=<?php echo $linha['ID']; ?>">
+                <input type="submit" value="DELETAR"/>
+                </a></td></tr>  
 
-        <td><a href="deleta_aluno.php?ID=<?php echo $linha['ID']; ?>">
-        
-        <input type="submit" value="DELETAR"/>
-    </a></td></tr>
-
-    <?php
-    }
-    ?>
-    </tbody>
-    </table>
-</body>
+                <?php   
+                    }
+                ?>
+            </tbody>
+        </table>
+    </body>
 </html>

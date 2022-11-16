@@ -1,13 +1,11 @@
 <?php
 
-include 'conexao.php';
+    include 'conexao.php';
 
-$id = $_GET['ID'];
+    $id = $_GET['ID'];
+    $consulta = "DELETE FROM alunos WHERE ID = $id";
 
-$consulta = "DELETE FROM alunos WHERE ID = $id";
+    mysqli_query($conexao, $consulta);
 
-mysqli_query($conexao, $consulta);
-
-header('location: ver_aluno.php');
-
+    header('location: ver_aluno.php');
 ?>
